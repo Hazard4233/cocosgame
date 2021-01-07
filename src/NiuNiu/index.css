@@ -1,0 +1,239 @@
+.niuniu-game-page header {width:100vh;background-color:#1e65a5;display:flex;padding:5px 8px 5px 8px}
+.niuniu-game-page header .first-serial{display: flex;}
+.niuniu-game-page header .second-serial{display: flex;}
+
+
+
+
+.game-banner {
+    position: relative;
+    color: white;
+}
+.game-banner .banner {
+    height: 60vw;
+    background-image: url("../../assets/images/banner.png");
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    opacity: 0.8;
+}
+.game-banner .zhuangjia {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    font-size: 4vw;
+    text-align: center;
+    transform: translateX(-50%);
+    background-image: url("../../assets/images/zhuangjia-btn.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25vw;
+    height: 6.5vw;
+    line-height: 6.5vw;
+    z-index: 1;
+}
+
+.game-banner .wenlu {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translate(0px, -50%);
+    z-index: 1;
+}
+.game-banner .wenlu button {
+    color: rgb(255, 255, 255);
+    width: 7vw;height: 31vw;
+    border-width: 1px 1px 1px 0px;
+    border-top-style: solid;border-bottom-style: solid;border-right-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.5);border-bottom-color: rgba(255, 255, 255, 0.5);border-right-color: rgba(255, 255, 255, 0.5);
+    border-image: initial;border-left-style: initial;border-left-color: initial;
+    border-radius: 0vw 4vw 4vw 0vw;
+    background: rgba(0, 0, 0, 0.1);
+    text-shadow: rgb(4, 186, 238) 0px 0px 10px, rgb(4, 186, 238) 0px 0px 10px;
+    padding: 2vw 0px 0px;
+    font-size: 3.5vw;
+    line-height: 4.5vw;
+    box-sizing: border-box;
+}
+.game-banner .lishijilu {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+.game-banner .lishijilu button {
+    color: rgb(255, 255, 255);
+    width: 7vw;height: 31vw;
+    border-width: 1px 0px 1px 1px;
+    border-top-style: solid;border-bottom-style: solid;border-left-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.5);border-bottom-color: rgba(255, 255, 255, 0.5);border-left-color: rgba(255, 255, 255, 0.5);
+    border-image: initial;border-right-style: initial;border-right-color: initial;
+    border-radius: 4vw 0px 0px 4vw;
+    background: rgba(0, 0, 0, 0.1);
+    text-shadow: rgb(4, 186, 238) 0px 0px 10px, rgb(4, 186, 238) 0px 0px 10px;
+    padding: 2vw 0px 0px;
+    font-size: 3.5vw;
+    line-height: 4.5vw;
+    box-sizing: border-box;
+}
+
+.btn-wrap {
+    position: relative;
+}
+.btn-wrap .info-text {
+    display: block;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    left: 0px;
+    top: 1.5vw;
+    width: 100%;
+    font-size: 3.5vw;
+    line-height: 4vw;
+    color: rgb(255, 192, 3);
+}
+.btn-wrap .back-btn { 
+    
+}
+.btn-wrap .btn-wrap-right {
+    position: absolute;
+    top: 0px;
+    right: 3vw;
+    display: flex;
+}
+.btn-circle {
+    background-image: url("../../assets/images/help-btn.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 12vw;
+    height: 10vw;
+    z-index: 10;
+}
+.btn-circle img{
+    width: 8vw;
+    height: 8vw;
+    background-size: cover;
+    background-position: center center;
+    pointer-events: none;
+    margin-left: -3px;
+    margin-top: -3px;
+}
+
+.bottom-part {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+}
+.bottom-part .guide-part {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 12vw;
+    background: rgb(12, 35, 68);
+    padding: 0px 3vw;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 3.5vw;
+    line-height: 3.8vw;
+    z-index: 10;
+}
+.bottom-part .guide-part .bet-amount-total, .bet-amount-token {
+    display: flex;
+    align-items: center;
+    border-radius: 4vw;
+    padding: 1vw 3vw 1vw 2vw;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    position: relative;
+}
+.bottom-part .guide-part .bet-amount-total img, .bet-amount-token img {
+    width: 5vw;
+    height: 5vw;
+}
+
+.bottom-part .guide-part .round {
+    position: absolute;
+    bottom: 2vw;
+    right: 40vw;
+    width: 5vw;
+    height: 5vw;
+    overflow: hidden;
+}
+.bottom-part .guide-part .confirm-cancel-btn {
+    display: flex;
+    margin-left: auto;
+}
+.bottom-part .guide-part .confirm-cancel-btn img {
+    width: 5vw;
+    height: 5vw;
+}
+.bottom-part .guide-part .confirm-cancel-btn .confirm-btn {
+    display: flex;
+    align-items: center;
+    border-radius: 4vw;
+    color: white;
+    border: 1px solid rgb(39, 201, 137);
+    background: rgba(39, 201, 137, 0.5);
+}
+.bottom-part .guide-part .confirm-cancel-btn .cancel-btn {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 4vw;
+    color: white;
+    border: 1px solid rgb(255, 64, 71);
+    background: rgba(255, 64, 71, 0.5);
+}
+
+.bottom-part .coin-part {
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-bottom: 2vw;
+    background-image: url("../../assets/images/coin-wrap.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 15vw;
+    display: grid;
+    grid-template-columns: 13vw 13vw 13vw 13vw 13vw 13vw 13vw;
+    grid-gap: 1vw;
+
+}
+
+.bottom-part .coin-part .coin-sprite {
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    margin-top: 2vw;
+}
+.bottom-part .coin-part .coin-sprite-custom {
+    background-image: url("../../assets/images/coin-sprite-custom.png");
+
+}
+.bottom-part .coin-part .coin-sprite-50 {
+    background-image: url("../../assets/images/coin-sprite-50.png");
+}
+.bottom-part .coin-part .coin-sprite-100 {
+    background-image: url("../../assets/images/coin-sprite-100.png");
+}
+.bottom-part .coin-part .coin-sprite-500 {
+    background-image: url("../../assets/images/coin-sprite-500.png");
+}
+.bottom-part .coin-part .coin-sprite-1000 {
+    background-image: url("../../assets/images/coin-sprite-1000.png");
+}
+.bottom-part .coin-part .coin-sprite-5000 {
+    background-image: url("../../assets/images/coin-sprite-5000.png");
+}
+.bottom-part .coin-part .coin-sprite-10000 {
+    background-image: url("../../assets/images/coin-sprite-10000.png");
+}
+

@@ -1,0 +1,52 @@
+.history-page header {
+    background-color: #f7b844;
+    width:100vw;
+    display:flex;
+    padding:8px 10px 8px 10px
+}
+.history-page .navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.history-nav-active {
+    border: 1px solid #49baee;
+    background-color: #49baee;
+    color: black;
+}
+.history-nav-not-active {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+.history-page .kaijiang-history-nav {
+    display: flex;
+    align-items: center;
+    padding: 8px 25px 8px 25px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.history-page .touzhu-history-nav {
+    display: flex;
+    align-items: center;
+    padding: 8px 25px 8px 25px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+.history-page .kaijiang-history {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.history-page .touzhu-history {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.history-page .kaijiang-history .history-item {
+    display: grid;grid-template-columns: 30% 45% 25%;
+}
+
+.history-page .touzhu-history {
+    display: none;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>NiuNiuGame</title>
+    <link href="../../assets/css/basic.css" rel="stylesheet" type="text/css"/>
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        html, body {margin: 0;padding: 0;overflow: hidden;-webkit-tap-highlight-color: transparent;position: fixed;
+            height: 100vh;width: 100vw;top: 0;left: 0;
+        }
+        button {outline: none;}
+        .fade-enter {opacity: 0.01;}
+        .fade-enter.fade-enter-active {opacity: 1;transition: opacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);}
+        .fade-exit {opacity: 1;}
+        .fade-exit.fade-exit-active {opacity: 0.01;transition: opacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);}
+        @media only screen and (orientation: landscape) {
+            body{display: none;}
+            html{position: fixed;top: 0;right: 0;bottom: 0;left: 0;background: #000;z-index: 10;}
+            html:before{
+                content: '';position: absolute;top: 0;right: 0;bottom: 0;left: 0;width: 50px;height: 50px;margin: auto;
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAADAFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8HPQsIAAAA/3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1O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) center / contain no-repeat;
+                animation: rotateScreen 1s linear infinite alternate;
+            }
+            html:after{
+                content: '\8BF7\7FFB\8F6C\624B\673A\5C4F\5E55';
+                position: absolute;top: 90px;right: 0;bottom: 0;left: 0;margin: auto;color: #fff;display: block;
+                width: 200px;height: 20px;text-align: center;
+            }
+            @keyframes rotateScreen {
+                to {
+                    transform: rotate(-40deg);
+                }
+            }
+        }
+    </style>
+    <script src="./game.js"></script>
+</head>
+<body class="niuniu-game-page" style="background-color: black;">
+    <header>
+        <div style="display: flex;width: calc(100vw - 16px);">
+            <div>
+                <div class="first-serial">
+                    <div class="serial-eight-color serial-num">8</div>
+                    <div class="serial-one-color serial-num">1</div>
+                    <div class="serial-ten-color serial-num">10</div>
+                    <div class="serial-two-color serial-num">2</div>
+                    <div class="serial-four-color serial-num">4</div>
+                    <div class="serial-nine-color serial-num">9</div>
+                    <div class="serial-seven-color serial-num">7</div>
+                    <div class="serial-five-color serial-num">5</div>
+                    <div class="serial-three-color serial-num">3</div>
+                    <div class="serial-six-color serial-num">6</div>
+                </div>
+                <div class="second-serial">
+                    <div class="serial-five-color serial-num">5</div>
+                    <div class="serial-three-color serial-num">3</div>
+                    <div class="serial-nine-color serial-num">9</div>
+                    <div class="serial-four-color serial-num">4</div>
+                    <div class="serial-ten-color serial-num">10</div>
+                    <div class="serial-seven-color serial-num">7</div>
+                    <div class="serial-one-color serial-num">1</div>
+                    <div class="serial-eight-color serial-num">8</div>
+                    <div class="serial-six-color serial-num">6</div>
+                    <div class="serial-two-color serial-num">2</div>
+                </div>
+            </div>
+            <div class="flex ai-center marlauto">
+                <div style="color: #e18443;">期数</div>
+                <span style="color: white;margin-left: 10px;">530</span>
+            </div>
+        </div>
+    </header>
+    <div class="game-banner">
+        <div class="zhuangjia">庄家</div>
+        <div>
+            <div class="wenlu">
+                <button>问<br />路</button>
+            </div>
+            <div class="banner"></div>
+            <div class="lishijilu">
+                <button onclick="gotoHistoryPage()"><img src="../../assets/images/clock.png" style="width: 4vw;height: 4vw;"/>历史记录</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-wrap">
+        <img src="../../assets/images/btn-wrap.png" style="width: 100vw;"/>
+        <div class="info-text">
+            <span>距封盘时间</span>
+            <span>00:09</span>
+        </div>
+        <div class="back-btn">返回桌面</div>
+        <div class="btn-wrap-right">
+            <div class="btn-sound-on btn-circle">
+                <img src="../../assets/images/sound-on.png" />
+            </div>
+            <div class="btn-help btn-circle" onclick="gotoHelpPage()">
+                <img src="../../assets/images/help.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-part">
+        <div class="guide-part">
+            <div class="bet-amount-total">
+                <img src="../../assets/images/bet-amount-total.png"/>
+                <span style="color: white;margin-left: 5px;">300.97</span>
+            </div>
+            <div class="bet-amount-token" style="margin-left: 10px;">
+                <img src="../../assets/images/bet-amount-token.png"/>
+                <span style="color: white;margin-left: 5px;">300.97</span>
+            </div>
+            <div class="confirm-cancel-btn">
+                <button class="confirm-btn">
+                    <img src="../../assets/images/confirm-icon.png"/>
+                    <span>确定</span>
+                </button>
+                <button class="cancel-btn">
+                    <img src="../../assets/images/cancel-icon.png">
+                    <span>取消</span>
+                </button>
+            </div>
+        </div>
+        <div class="coin-part">
+            <button class="coin-sprite coin-sprite-custom"></button>
+            <button class="coin-sprite coin-sprite-50"></button>
+            <button class="coin-sprite coin-sprite-100"></button>
+            <button class="coin-sprite coin-sprite-500"></button>
+            <button class="coin-sprite coin-sprite-1000"></button>
+            <button class="coin-sprite coin-sprite-5000"></button>
+            <button class="coin-sprite coin-sprite-10000"></button>
+        </div>
+    </div>
+
+</body>
+</html>
